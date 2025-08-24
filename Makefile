@@ -25,7 +25,8 @@ update-branch:
 	git push
 
 hf-login:
-	git switch update
+	git fetch origin
+	git checkout -b update origin/update || git checkout update
 	pip install -U "huggingface_hub[cli]"
 	hf auth login --token $(HF) --add-to-git-credential
 
