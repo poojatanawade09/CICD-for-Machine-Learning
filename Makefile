@@ -31,8 +31,8 @@ hf-login:
 	hf auth login --token $(HF) --add-to-git-credential
 
 push-hub:
-	hf upload kingabzpro/Drug-Classification ./App --repo-type=space --commit-message="Sync App files" --create-pr
-	hf upload kingabzpro/Drug-Classification ./Model /Model --repo-type=space --commit-message="Sync Model" --create-pr
-	hf upload kingabzpro/Drug-Classification ./Results /Metrics --repo-type=space --commit-message="Sync Model" --create-pr
+	hf upload poojaanand514/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
+	hf upload poojaanand514/Drug-Classification ./Model /Model --repo-type=space --commit-message="Sync Model"
+	hf upload poojaanand514/Drug-Classification ./Results /Metrics --repo-type=space --commit-message="Sync Model"
 
 deploy: hf-login push-hub    
