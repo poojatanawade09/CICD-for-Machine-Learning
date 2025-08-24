@@ -67,4 +67,7 @@ with open("./Results/metrics.txt", "w") as outfile:
     outfile.write(f"\nAccuracy = {round(accuracy, 2)}, F1 Score = {round(f1, 2)}")
 
 ## Saving the model file
-sio.dump(pipe, "./Model/drug_pipeline.skops")
+untrusted_types = sio.get_untrusted_types(file="Model/drug_pipeline.skops")
+
+# Then load with the trusted types
+sio.load("Model/drug_pipeline.skops", trusted=untrusted_types)
